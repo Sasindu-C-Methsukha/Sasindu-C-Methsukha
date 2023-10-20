@@ -1,65 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
-
-@media (max-width: 768px) {
-    .header h1 {
-        
-        font-size: 30px; /* Adjust the font size to your desired value */
-        margin-top: 20px;
-        margin-left: -80px; /* Adjust the margin as needed */
-    }
-            .header .header-buttons {
-                flex-direction: column; /* Stack the buttons vertically */
-                margin-top: 20px; /* Add space between the buttons and the header */
-            }
-            .content-box.second {
-                margin: auto;
-            height: 600px;
-            
-            
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-            .content-box.second h1 {
-                font-size: 40px;
-            }
-            .content-box.second p {
-                font-size: 20px;
-            }
-
-            /* Styles for Webkit-based browsers (Chrome, Safari) */
-.content-box.second::-webkit-scrollbar {
-  width: 10px; /* Width of the scrollbar */
-}
-
-.content-box.second::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.5); /* Transparent white */
-  border-radius: 5px; /* Rounded thumb */
-}
-
-/* Styles for Firefox */
-.content-box.second {
-  scrollbar-width: thin; /* "thin" to ensure it's styled */
-}
-
-.content-box.second::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.5); /* Transparent white */
-  border-radius: 5px; /* Rounded thumb */
-}
-
-/* Styles for Microsoft Edge */
-.content-box.second::-ms-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.5); /* Transparent white */
-  border-radius: 5px; /* Rounded thumb */
-}
-        }
-
-        /* Your existing CSS styles */
+        /* Common styles for all screen sizes */
         body {
-            
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
             background-color: #1A1A1A;
             margin: 0;
             padding: 0;
@@ -75,7 +26,6 @@
         }
 
         .header h1 {
-            /* Gradient animation for h1 */
             background-image: linear-gradient(45deg, #ffffff, #ffffff, #ffffff);
             -webkit-background-clip: text;
             background-clip: text;
@@ -83,24 +33,6 @@
             padding-left: 25%;
             animation: fadeIn 2s, gradientAnimation 4s infinite;
             font-size: 60px;
-        }
-
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
-        }
-
-        @keyframes gradientAnimation {
-            0% {
-                background-position: 100% 0;
-            }
-            100% {
-                background-position: -100% 0;
-            }
         }
 
         .header p {
@@ -147,14 +79,11 @@
             height: 340px;
             margin: 20px;
             margin-left: 150px;
-            
-            overflow: auto;  /* Added overflow for content overflow */
-            
+            overflow: auto;
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .content-box.second p {
-            /* Gradient animation for paragraph */
             background-image: linear-gradient(45deg, #ffffff, #ffffff, #ffffff);
             -webkit-background-clip: text;
             background-clip: text;
@@ -185,7 +114,7 @@
             color: white;
             text-align: center;
             padding: 20px;
-            display: block;
+            margin-top: auto; /* Sticky footer */
         }
 
         .footer-icons a {
@@ -213,51 +142,75 @@
             text-align: center;
             padding: 20px;
             display: block;
-            height: 15px;
-            font-family: 'PT Serif', serif; /* Specify the font-family */
+            font-family: 'PT Serif', serif;
         }
 
         .second-footer p {
             font-size: 20px;
-            margin-top: 2px;
         }
+
         .second-footer p a {
             font-size: 20px;
-            margin-top: 2px;
             color: white;
             text-decoration: none;
         }
+
         .second-footer p a:hover {
             font-size: 20px;
-            margin-top: 2px;
             color: #ce076b;
             text-decoration: none;
         }
-       
+
         .background-text {
-    position: fixed;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: -1;
-    pointer-events: none;
-    font-size: 300px;
-    opacity: 0.01;
-    
-}
+            position: fixed;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+            pointer-events: none;
+            font-size: 300px;
+            opacity: 0.01;
+        }
 
-.background-text p {
-    font-size: 2em;
-    color: white;
-    text-align: center;
-}
+        .background-text p {
+            font-size: 2em;
+            color: white;
+            text-align: center;
+        }
 
+        /* Media Queries for Responsive Design */
 
+        /* Mobile devices (up to 480px) */
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 30px;
+                padding-left: 0;
+            }
+            .header-buttons {
+                flex-direction: column;
+                margin-top: 20px;
+                margin-left: 0;
+            }
+            .header-buttons button {
+                margin-bottom: 10px; /* Add spacing between buttons */
+            }
+            .content-box.second {
+                width: 100%;
+                height: auto;
+                margin: 10px;
+            }
+            .content-box.second h1 {
+                font-size: 40px;
+            }
+            .content-box.second p {
+                font-size: 20px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -286,8 +239,6 @@
             <a href="https://twitter.com/Shiningmindss"><i class="fab fa-twitter"></i></a>
             <a href="#"><i class="fab fa-facebook"></i></a>
             <a href="https://www.tiktok.com/@sasiya_x_"><i class="fab fa-tiktok"></i></a>
-            
-            
         </div>
     </div>
 
@@ -296,8 +247,6 @@
         <p>Designed by <a href="#">Sasindu Methsukha</a></p>
     </div>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    
     <script>
         // JavaScript for auto-typing effect
         const paragraph = "Sasindu C Methsukha is a creator, designer, and programmer. His skills combine to form a versatile profile. He excels at imagining and implementing creative ideas. As a designer, he crafts visually appealing concepts, while his programming expertise brings these ideas to life in functional and elegant ways.";
@@ -311,7 +260,7 @@
                 setTimeout(typeParagraph, typingSpeed);
             }
         }
-        
+
         typeParagraph();
     </script>
 </body>
