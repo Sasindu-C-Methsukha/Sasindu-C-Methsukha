@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 30px; /* Adjust the font size to your desired value */
+        margin-top: 20px;
+        margin-left: -80px; /* Adjust the margin as needed */
+    }
+            .header .header-buttons {
+                flex-direction: column; /* Stack the buttons vertically */
+                margin-top: 20px; /* Add space between the buttons and the header */
+            }
+            .content-box.second {
+                margin: auto;
+            height: 600px;
+            
+            
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+            .content-box.second h1 {
+                font-size: 40px;
+            }
+            .content-box.second p {
+                font-size: 20px;
+            }
+
+            /* Styles for Webkit-based browsers (Chrome, Safari) */
+.content-box.second::-webkit-scrollbar {
+  width: 10px; /* Width of the scrollbar */
+}
+
+.content-box.second::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.5); /* Transparent white */
+  border-radius: 5px; /* Rounded thumb */
+}
+
+/* Styles for Firefox */
+.content-box.second {
+  scrollbar-width: thin; /* "thin" to ensure it's styled */
+}
+
+.content-box.second::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.5); /* Transparent white */
+  border-radius: 5px; /* Rounded thumb */
+}
+
+/* Styles for Microsoft Edge */
+.content-box.second::-ms-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.5); /* Transparent white */
+  border-radius: 5px; /* Rounded thumb */
+}
+        }
+
+        /* Your existing CSS styles */
+        body {
+            background-color: #1A1A1A;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            overflow: hidden;
+        }
+
+        .header h1 {
+            /* Gradient animation for h1 */
+            background-image: linear-gradient(45deg, #ce076b, #3a49d3, #ce076b);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            padding-left: 25%;
+            animation: fadeIn 2s, gradientAnimation 4s infinite;
+            font-size: 60px;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 100% 0;
+            }
+            100% {
+                background-position: -100% 0;
+            }
+        }
+
+        .header p {
+            color: white;
+        }
+
+        .header-buttons {
+            display: flex;
+        }
+
+        .header-buttons button {
+            background-color: transparent;
+            background-size: 200% 100%;
+            background-position: 100% 0;
+            background-clip: text;
+            color: white;
+            border: 1px solid white;
+            width: 100px;
+            padding: 10px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .header-buttons button:hover {
+            background-image: linear-gradient(45deg, #ce076b, #3a49d3, #ce076b);
+            background-position: 0 0;
+            color: black;
+            border: none;
+            box-shadow: 5px 5px 10px rgba(206, 7, 107, 0.5);
+            animation: gradientAnimation 2s infinite;
+        }
+
+        .box-container {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .content-box.second {
+            position: relative;
+            background-color: transparent;
+            border: 5px solid white;
+            width: 80%;
+            height: 340px;
+            margin: 20px;
+            margin-left: 150px;
+            
+            overflow: auto;  /* Added overflow for content overflow */
+            
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .content-box.second p {
+            /* Gradient animation for paragraph */
+            background-image: linear-gradient(45deg, #ce076b, #3a49d3, #ce076b);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-size: 30px;
+            animation: gradientAnimation 4s infinite;
+            margin: 20px;
+        }
+
+        .content-box.second h1 {
+            color: white;
+            margin: 20px;
+            font-size: 60px;
+        }
+
+        .content-box:hover {
+            transform: scale(1.05);
+            box-shadow: 5px 5px 10px rgba(255, 255, 255, 0.5);
+        }
+
+        .box-content {
+            transform: scale(1.05);
+            box-shadow: 5px 5px 10px rgba(255, 255, 255, 0.5);
+        }
+
+        .footer {
+            background-color: transparent;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            display: block;
+        }
+
+        .footer-icons a {
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+            margin: 0 10px;
+            transition: transform 0.3s, box-shadow 0.3s, font-size 0.3s;
+        }
+
+        .footer-icons a:hover {
+            color: #ce076b;
+            text-decoration: none;
+            font-size: 30px;
+        }
+
+        .name {
+            color: #ce076b;
+        }
+
+        /* Style for the second footer */
+        .second-footer {
+            background-color: #2a2a2a;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            display: block;
+            height: 15px;
+            font-family: 'PT Serif', serif; /* Specify the font-family */
+        }
+
+        .second-footer p {
+            font-size: 20px;
+            margin-top: 2px;
+        }
+        .second-footer p a {
+            font-size: 20px;
+            margin-top: 2px;
+            color: white;
+            text-decoration: none;
+        }
+        .second-footer p a:hover {
+            font-size: 20px;
+            margin-top: 2px;
+            color: #ce076b;
+            text-decoration: none;
+        }
+       
+        .background-text {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+    pointer-events: none;
+    font-size: 300px;
+    opacity: 0.01;
+    
+}
+
+.background-text p {
+    font-size: 2em;
+    color: white;
+    text-align: center;
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="background-text">
+        <p>SCM</p>
+    </div>
+    <div class="header">
+        <div class="header-buttons">
+            <button>Home</button>
+            <button>Contact</button>
+        </div>
+        <h1>Sasindu C Methsukha</h1>
+    </div>
+
+    <div class="box-container">
+        <div class="content-box second">
+            <h1>Hi, My Name Is <span class="name">Sasindu</span></h1>
+            <p id="auto-typing-paragraph"></p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-icons">
+            <a href="https://www.youtube.com/@shining_minds"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.instagram.com/__sasiya__x/"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/Shiningmindss"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+        </div>
+    </div>
+
+    <!-- Second Footer -->
+    <div class="second-footer">
+        <p>Designed by <a href="#">Sasindu Methsukha</a></p>
+    </div>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    
+    <script>
+        // JavaScript for auto-typing effect
+        const paragraph = "Sasindu C Methsukha is a creator, designer, and programmer. His skills combine to form a versatile profile. He excels at imagining and implementing creative ideas. As a designer, he crafts visually appealing concepts, while his programming expertise brings these ideas to life in functional and elegant ways.";
+        const typingSpeed = 50; // Adjust the typing speed (milliseconds per character)
+
+        let charIndex = 0;
+        function typeParagraph() {
+            if (charIndex < paragraph.length) {
+                document.getElementById("auto-typing-paragraph").innerHTML += paragraph.charAt(charIndex);
+                charIndex++;
+                setTimeout(typeParagraph, typingSpeed);
+            }
+        }
+        
+        typeParagraph();
+    </script>
+</body>
+</html>
